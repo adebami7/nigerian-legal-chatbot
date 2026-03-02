@@ -1,12 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { Scale, Shield, BookOpen, MessageCircle, ChevronRight, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Index() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Theme Toggle */}
+      <div className="absolute right-4 top-4 z-20">
+        <ThemeToggle />
+      </div>
+
       {/* Hero */}
       <section className="relative flex min-h-[85vh] flex-col items-center justify-center px-6 text-center">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--accent)/0.15),transparent_70%)]" />

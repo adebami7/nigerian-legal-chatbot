@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Scale, Loader2 } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChatMessage } from "@/components/ChatMessage";
@@ -72,7 +73,10 @@ export default function Chat() {
             <p className="text-xs text-muted-foreground">Nigerian Law Assistant</p>
           </div>
         </div>
-        {isLoading && <Loader2 className="ml-auto h-4 w-4 animate-spin text-muted-foreground" />}
+        {isLoading && <Loader2 className="ml-auto mr-2 h-4 w-4 animate-spin text-muted-foreground" />}
+        <div className={isLoading ? "" : "ml-auto"}>
+          <ThemeToggle />
+        </div>
       </header>
 
       {/* Messages */}
